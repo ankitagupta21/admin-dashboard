@@ -5,6 +5,7 @@ import UserTable from "./UserTable";
 import SearchBar from "./SearchBar";
 import DeleteButton from "./DeleteButton";
 import Pagination from "./Pagination";
+import "./styles.css";
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
@@ -127,10 +128,13 @@ const AdminDashboard = () => {
   const filteredUsers = applySearchFilter(users).slice(startIndex, endIndex);
 
   return (
-    <div className="container mt-4">
-      <h1>Admin Dashboard</h1>
-      <SearchBar onSearch={handleSearch} />
-      <DeleteButton onClick={DeleteSelected} />
+    <div className="container">
+      <h1 className="heading">Admin Dashboard</h1>
+      <div className="nav">
+        <SearchBar onSearch={handleSearch} />
+        <DeleteButton onClick={DeleteSelected} />
+      </div>
+
       <UserTable
         users={filteredUsers}
         onEdit={handleEdit}
@@ -145,11 +149,21 @@ const AdminDashboard = () => {
         onCancelEdit={handleCancelEdit}
         handleChange={handleChange}
       />
-      <Pagination
-        onPageChange={setCurrentPage}
-        currentPage={currentPage}
-        totalPages={calculateTotalPages()}
-      />
+      <div className="footer">
+        <p className="page-info">
+          {selectedRows.length} out of {users.length} row(s) selected.
+        </p>
+        <div className="footer-right">
+          <p className="page-info">
+            Page {currentPage} out of {calculateTotalPages()}
+          </p>
+          <Pagination
+            onPageChange={setCurrentPage}
+            currentPage={currentPage}
+            totalPages={calculateTotalPages()}
+          />
+        </div>
+      </div>
     </div>
   );
 };

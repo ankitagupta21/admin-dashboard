@@ -1,0 +1,171 @@
+.container{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.8rem;
+}
+
+.heading{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    width: 40%;
+    padding: 0.5rem 0.7rem;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.search-bar input{
+    width:80%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+.search-bar button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.delete{
+    border: 1px solid rgb(237, 75, 75);
+    outline: none;
+    background-color: rgb(247, 186, 186);
+    cursor: pointer;
+    color: rgb(237, 75, 75);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.7rem;
+    border-radius: 5px;
+}
+
+.table{
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-spacing: 0;
+}
+
+.table th{
+    text-align: left;
+    padding: 0.5rem 0.7rem;
+}
+
+.table td{
+    padding: 0.5rem 0.7rem;
+    border-top: 1px solid #ccc;
+}
+
+.table td input{
+    border: 1px solid #ccc;
+    padding: 0.4rem 0.5rem;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 1rem;
+}
+
+.table tr button{
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+}
+
+.delete-row{
+    color: rgb(247, 129, 129);
+}
+
+.edit{
+    color: rgb(129, 129, 247);
+}
+
+.save{
+    color: rgb(2, 140, 2);
+}
+
+.cancel{
+    color: rgb(218, 172, 6);
+}
+
+.selected{
+    background-color: rgb(221, 221, 221);
+}
+
+ul{
+    list-style-type: none;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.page-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 0.4rem;
+    cursor: pointer;
+}
+
+.page-item button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0.4rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.page-item.active{
+    background-color: rgb(221, 221, 221);
+}
+
+.page-item:hover{
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.footer-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}

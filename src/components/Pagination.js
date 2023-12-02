@@ -1,5 +1,12 @@
-// src/components/Pagination.js
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleLeft,
+  faAnglesLeft,
+  faAngleRight,
+  faAnglesRight,
+} from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 const Pagination = ({ onPageChange, currentPage, totalPages }) => {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
@@ -9,20 +16,20 @@ const Pagination = ({ onPageChange, currentPage, totalPages }) => {
       <ul className="pagination">
         <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
           <button
-            className="page-link"
+            className="first-page"
             onClick={() => onPageChange(1)}
             disabled={currentPage === 1}
           >
-            First
+            <FontAwesomeIcon icon={faAnglesLeft} />
           </button>
         </li>
         <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
           <button
-            className="page-link"
+            className="next-page"
             onClick={() => onPageChange(currentPage - 1)}
             disabled={currentPage === 1}
           >
-            Previous
+            <FontAwesomeIcon icon={faAngleLeft} />
           </button>
         </li>
         {pages.map((page) => (
@@ -41,11 +48,11 @@ const Pagination = ({ onPageChange, currentPage, totalPages }) => {
           }`}
         >
           <button
-            className="page-link"
+            className="next-page"
             onClick={() => onPageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
-            Next
+            <FontAwesomeIcon icon={faAngleRight} />
           </button>
         </li>
         <li
@@ -54,11 +61,11 @@ const Pagination = ({ onPageChange, currentPage, totalPages }) => {
           }`}
         >
           <button
-            className="page-link"
+            className="last-page"
             onClick={() => onPageChange(totalPages)}
             disabled={currentPage === totalPages}
           >
-            Last
+            <FontAwesomeIcon icon={faAnglesRight} />
           </button>
         </li>
       </ul>

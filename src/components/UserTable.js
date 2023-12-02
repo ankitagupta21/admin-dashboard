@@ -1,4 +1,12 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEdit,
+  faSave,
+  faTimes,
+  faTrashAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 const UserTable = ({
   users,
@@ -25,7 +33,6 @@ const UserTable = ({
               checked={selectedPage}
             />
           </th>
-          <th>ID</th>
           <th>Name</th>
           <th>Email</th>
           <th>Role</th>
@@ -45,7 +52,6 @@ const UserTable = ({
                 checked={selectedRows.includes(user.id)}
               />
             </td>
-            <td>{user.id}</td>
             <td>
               {isEditMode && editableUser && editableUser.id === user.id ? (
                 <input
@@ -86,31 +92,35 @@ const UserTable = ({
               {isEditMode && editableUser && editableUser.id === user.id ? (
                 <>
                   <button
-                    className="btn btn-sm btn-success"
+                    className="save"
                     onClick={() => onSave(user.id)}
+                    cursor="pointer"
                   >
-                    Save
+                    <FontAwesomeIcon icon={faSave} />
                   </button>
                   <button
-                    className="btn btn-sm btn-secondary"
+                    className="cancel"
                     onClick={onCancelEdit}
+                    cursor="pointer"
                   >
-                    Cancel
+                    <FontAwesomeIcon icon={faTimes} />
                   </button>
                 </>
               ) : (
                 <button
-                  className="btn btn-sm btn-info"
+                  className="edit"
                   onClick={() => onEdit(user)}
+                  cursor="pointer"
                 >
-                  Edit
+                  <FontAwesomeIcon icon={faEdit} />
                 </button>
               )}
               <button
-                className="btn btn-sm btn-danger"
+                className="delete-row"
                 onClick={() => onDelete(user.id)}
+                cursor="pointer"
               >
-                Delete
+                <FontAwesomeIcon icon={faTrashAlt} />
               </button>
             </td>
           </tr>

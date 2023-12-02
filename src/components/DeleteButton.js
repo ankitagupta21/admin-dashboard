@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 
 const DeleteButton = ({ onClick }) => {
   return (
-    <button onClick={onClick}>
+    <button className="delete" onClick={onClick}>
       <FontAwesomeIcon icon={faTrash} />
     </button>
   );

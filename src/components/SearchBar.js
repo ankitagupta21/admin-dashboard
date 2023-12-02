@@ -1,5 +1,7 @@
 // src/components/SearchBar.js
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -9,7 +11,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="mb-3">
+    <div className="search-bar">
       <input
         type="text"
         className="form-control"
@@ -17,8 +19,8 @@ const SearchBar = ({ onSearch }) => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button className="btn btn-primary ml-2" onClick={handleSearch}>
-        Search
+      <button className="search-icon" onClick={handleSearch}>
+        <FontAwesomeIcon icon={faSearch} />
       </button>
     </div>
   );
