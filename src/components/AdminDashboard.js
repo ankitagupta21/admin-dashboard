@@ -1,4 +1,3 @@
-// src/components/AdminDashboard.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UserTable from "./UserTable";
@@ -75,14 +74,6 @@ const AdminDashboard = () => {
   };
 
   const handleSelectAll = () => {
-    // if (selectedAll) {
-    //   setSelectedRows([]);
-    //   setSelectedAll(false);
-    // } else {
-    //   const allUserIds = users.map((user) => user.id);
-    //   setSelectedRows(allUserIds);
-    //   setSelectedAll(true);
-    // }
     const currentPageUsers = applySearchFilter(users).slice(
       (currentPage - 1) * 10,
       currentPage * 10
